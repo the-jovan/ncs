@@ -1,0 +1,13 @@
+.btn {
+  padding: 0.5rem;
+
+  &_primary {
+    background: blue;
+    color: white;
+  }
+
+  &_secondary {
+    background: grey;
+    color: black;
+  }
+}
