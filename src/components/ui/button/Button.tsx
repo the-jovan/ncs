@@ -3,12 +3,14 @@ import styles from "./Button.module.scss";
 
 interface ComponentProps {
   label: string;
+  clickEvent: () => void;
   primary?: boolean;
   secondary?: boolean;
 }
 
 const Button: FunctionComponent<ComponentProps> = ({
   label,
+  clickEvent,
   primary,
   secondary,
 }) => {
@@ -18,7 +20,11 @@ const Button: FunctionComponent<ComponentProps> = ({
     return styles.btn;
   };
 
-  return <button className={getClassName()}>{label}</button>;
+  return (
+    <button className={getClassName()} onClick={clickEvent}>
+      {label}
+    </button>
+  );
 };
 
 export default Button;

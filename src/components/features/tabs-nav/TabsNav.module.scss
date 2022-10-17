@@ -1,0 +1,15 @@
+.tabsnav {
+  color: red;
+
+  &_tab {
+    color: blue;
+
+    &_selected {
+      color: green;
+    }
+
+    &_disabled {
+      opacity: 0.5;
+    }
+  }
+}
