@@ -6,12 +6,12 @@ export default {
     {
       text: "First tab",
       value: "1",
-      selected: true,
+      active: true,
     },
     {
       text: "Second tab",
       value: "2",
-      selected: false,
+      active: false,
     },
   ],
   onChangeTab: (val: string) => {
@@ -27,20 +27,25 @@ export const Basic = Template.bind({});
 Basic.args = {
   tabs: [
     {
-      text: "Active tab",
+      text: "Active",
       value: "1",
-      selected: true,
+      active: true,
     },
     {
-      text: "Second tab",
+      text: "Second",
       value: "2",
-      selected: false,
+      active: false,
     },
     {
-      text: "Disabled tab",
+      text: "Disabled",
       value: "3",
-      selected: false,
+      active: false,
       disabled: true,
+    },
+    {
+      text: "Fourth",
+      value: "4",
+      active: false,
     },
   ],
   onChangeTab: (val: string) => {

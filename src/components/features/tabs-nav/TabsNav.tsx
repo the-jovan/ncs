@@ -4,7 +4,7 @@ import styles from "./TabsNav.module.scss";
 interface ITab {
   text: string;
   value: string;
-  selected: boolean;
+  active: boolean;
   disabled?: boolean;
 }
 
@@ -14,9 +14,9 @@ interface ComponentProps {
 }
 
 const TabsNav: FunctionComponent<ComponentProps> = ({ tabs, onChangeTab }) => {
-  const configClassName = (selected: boolean, disabled = false) => {
+  const configClassName = (active: boolean, disabled = false) => {
     if (disabled) return `${styles.tabsnav_tab} ${styles.tabsnav_tab_disabled}`;
-    if (selected) return `${styles.tabsnav_tab} ${styles.tabsnav_tab_selected}`;
+    if (active) return `${styles.tabsnav_tab} ${styles.tabsnav_tab_active}`;
     return `${styles.tabsnav_tab}`;
   };
 
@@ -26,8 +26,7 @@ const TabsNav: FunctionComponent<ComponentProps> = ({ tabs, onChangeTab }) => {
         <li
           key={tab.value}
           onClick={() => onChangeTab(tab.value)}
-          // className={`${styles.tabsnav_tab}${tab.selected ? " ok" : ""}`}
-          className={configClassName(tab.selected, tab.disabled)}
+          className={configClassName(tab.active, tab.disabled)}
         >
           {tab.text}
         </li>

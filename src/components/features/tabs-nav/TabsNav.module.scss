@@ -1,15 +1,42 @@
 .tabsnav {
-  color: red;
+  font-family: "Exo 2", sans-serif;
+  display: flex;
+  padding-left: 0;
+
+  list-style-type: none;
 
   &_tab {
-    color: blue;
+    flex: 1;
+    padding: 0.5rem 0;
+    min-width: fit-content;
 
-    &_selected {
-      color: green;
-    }
+    text-align: center;
+    user-select: none;
+    color: #a5c9ca;
+    border-bottom: 2px solid #e7f6f2;
+
+    cursor: pointer;
 
     &_disabled {
+      cursor: not-allowed;
       opacity: 0.5;
     }
+
+    &_active {
+      color: #2c3333;
+      border-color: #2c3333;
+    }
   }
+
+  // &_tab {
+  //   color: blue;
+
+  //   &_selected {
+  //     color: green;
+  //   }
+
+  //   &_disabled {
+  //     opacity: 0.5;
+  //   }
+  // }
 }
